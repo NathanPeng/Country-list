@@ -1,0 +1,14 @@
+.region{
+  display: flex;
+  margin-bottom: 20px;
+}
+.region__seperate{
+  margin-left: 10px;
+}
+
+.contries__remove{
+  display:none;
+}
+.contries__show{
+  display:block;
+}

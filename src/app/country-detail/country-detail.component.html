@@ -1,0 +1,30 @@
+
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Capital</th>
+    <th scope="col">Population</th>
+    <th scope="col">Currencies</th>
+    <th scope="col">Flag</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let country of countries; index as i">
+    <!-- name -->
+    <td>{{ country.name }}</td>
+    <!-- capital -->
+    <td>{{ country.capital  }}</td>
+    <!-- population -->
+    <td>{{ country.population }}</td>
+    <!-- currencies -->
+    <td>{{ country.currencies ? country.currencies[0].code:""}}</td>
+    <!-- flag -->
+    <td>
+      <img [src]="country.flag" class="mr-2" style="width: 20px">
+    </td>
+  </tr>
+  </tbody>
+</table>
