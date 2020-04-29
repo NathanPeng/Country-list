@@ -17,6 +17,8 @@ export class AppComponent implements OnInit {
   public show: boolean =false;
   // public countries$: Observable<any>;
   public storeAll: any;
+  // show the tables
+  public showTable: boolean = false;
 
   constructor( private store: Store<AppState> ){}
 
@@ -32,6 +34,7 @@ export class AppComponent implements OnInit {
     // dispatch and action here for the feild
     this.store.dispatch( new CountriesAction.GetCountries(name) );
     this.show = true;
+    this.showTable = false;
   }
   selectCountry(name: string){
     // debugger
@@ -41,7 +44,7 @@ export class AppComponent implements OnInit {
       let country =  this.storeAll .filter(country => country.name === name).pop();
       // stores infromation on that one country
       this.store.dispatch( new GetCountry(country) );
-
+      this.showTable = true
   }
 
   showContries(){
