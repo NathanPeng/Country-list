@@ -5,7 +5,7 @@
       Region
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <button class="dropdown-item"  (click)="clickRegion('asia')" >Asia</button>
+      <button class="asia dropdown-item"  (click)="clickRegion('asia')" >Asia</button>
       <button class="dropdown-item" (click)="clickRegion('europe')">Europe</button>
     </div>
   </div>
@@ -16,7 +16,7 @@
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       <ng-container *ngFor="let country of storeAll ">
-        <button class="dropdown-item" (click)="selectCountry(country.name)" >{{ country.name }}</button>
+        <button id="country" class="dropdown-item" (click)="selectCountry(country.name)" >{{ country.name }}</button>
       </ng-container>
     </div>
   </div>

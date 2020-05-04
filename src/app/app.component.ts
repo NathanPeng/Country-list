@@ -30,7 +30,6 @@ export class AppComponent implements OnInit {
   }
 
   clickRegion(name: string){
-    // console.log(name);
     // dispatch and action here for the feild
     this.store.dispatch( new CountriesAction.GetCountries(name) );
     this.show = true;
@@ -38,8 +37,6 @@ export class AppComponent implements OnInit {
   }
   selectCountry(name: string){
     // debugger
-
-
       // get one country by its unique name
       let country =  this.storeAll .filter(country => country.name === name).pop();
       // stores infromation on that one country

@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CountryDetailComponent } from './country-detail.component';
+import  { StoreModule } from '@ngrx/store';
+import {reducers} from '../app.module';
+
 
 describe('CountryDetailComponent', () => {
   let component: CountryDetailComponent;
@@ -8,7 +11,10 @@ describe('CountryDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CountryDetailComponent ]
+      declarations: [ CountryDetailComponent ],
+      imports: [
+        StoreModule.forRoot(reducers)
+      ]
     })
     .compileComponents();
   }));
@@ -22,4 +28,13 @@ describe('CountryDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('When you call ngOnInit and get the intial information from my store',()=>{
+    component.ngOnInit();
+    // console.log(component.countries)
+    expect(component.countries.length).toBe(1);
+    expect(component.countries[0].name).toBe('Nathan');
+  })
+  // it(' Initialy what showTable does',()=>{
+  //   expect(component.showTables()).toBeTruthy();
+  // })
 });

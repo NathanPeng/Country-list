@@ -21,7 +21,7 @@ import {AppState} from './_state/country.state';
 // }
 
 // tslint:disable-next-line: one-variable-per-declaration
-const reducers: ActionReducerMap<AppState> = {
+export const reducers: ActionReducerMap<AppState> = {
    countries: countriesReducer,
    country: countryReducer
 }
